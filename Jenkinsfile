@@ -1,5 +1,5 @@
 #!groovy
-node('ci-docker') {
+node('docker') {
 
   stage 'Pull eXo Docker Image'
   def eXoJDKMaven = docker.image('exoplatform/ci:jdk8-maven32');

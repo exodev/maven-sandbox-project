@@ -1,5 +1,8 @@
 #!groovy
-node('docker') {
+node('ci-docker') {
+
+  stage 'Check Jenkinsfile'
+  readTrusted 'Jenkinsfile'
 
   stage 'Pull eXo Docker Image'
   def eXoJDKMaven = docker.image('exoplatform/ci:jdk8-maven32');
@@ -14,7 +17,7 @@ node('docker') {
       // Use custom settings.xml file on project workspace directory
        wrap([$class: 'ConfigFileBuildWrapper', managedFiles: [[fileId: 'exo-ci-maven-settings', targetLocation: 'settings.xml', variable: '']]]) {
          eXoJDKMaven.inside() {
-           sh 'mvn install -Pexo-release -s settings.xml'
+           sh 'mvn install -s settings.xml'
            step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
            step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
          }
@@ -23,7 +26,4 @@ node('docker') {
        //clean local copy
        sh 'rm -f settings.xml'
   }
-
-  
 }
-

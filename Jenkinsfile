@@ -1,6 +1,7 @@
 #!groovy
 node('ci-docker') {
   sh 'echo thomas'
+  sh 'echo thomas2'
 
   stage 'Check Jenkinsfile'
   readTrusted 'Jenkinsfile'

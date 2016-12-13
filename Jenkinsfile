@@ -18,8 +18,6 @@ node('ci-docker') {
        wrap([$class: 'ConfigFileBuildWrapper', managedFiles: [[fileId: 'exo-ci-maven-settings', targetLocation: 'settings.xml', variable: '']]]) {
          eXoJDKMaven.inside() {
            sh 'mvn install -s settings.xml'
-           step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
-           step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
          }
        }
   } finally {

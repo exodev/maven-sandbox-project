@@ -8,6 +8,6 @@ public class HelloWorld {
         return message;
     }
 
-    private String message = "Hello Dev Squad Team";
+    private String message = "Hello Dev Squad Team !";
 
 }

@@ -8,7 +8,7 @@ public class HelloWorld {
         return message;
 
     }
-    public String getErrot() {
+    public String getError() {
         return error;
 
     }

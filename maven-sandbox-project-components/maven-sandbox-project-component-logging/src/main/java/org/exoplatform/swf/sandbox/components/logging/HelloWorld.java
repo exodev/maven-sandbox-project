@@ -6,8 +6,12 @@ public class HelloWorld {
 
     public String getMessage() {
         return message;
-    }
 
+    }
+    public String getErrot() {
+        return error;
+
+    }
     private String message = "Hello World";
-    private String message2 = "Hello eXoers";
+    private String error = "eXoers";
 }

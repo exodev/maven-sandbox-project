@@ -13,5 +13,5 @@ public class HelloWorld {
 
     }
     private String message = "Hello World";
-    private String error = "eXoers";
+    private String error = "eXoers.Dev.SQUAD";
 }

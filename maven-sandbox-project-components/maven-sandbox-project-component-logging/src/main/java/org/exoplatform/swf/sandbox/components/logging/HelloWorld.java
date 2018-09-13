@@ -1,6 +1,7 @@
 package org.exoplatform.swf.sandbox.components.logging;
 
 
+
 public class HelloWorld {
 
 
@@ -9,5 +10,5 @@ public class HelloWorld {
     }
 
     private String message = "Hello World";
-
+    System.out.println("This is a message "+message);
 }

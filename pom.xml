@@ -7,7 +7,7 @@
     <version>16-M01</version>
   </parent>
   <groupId>org.exoplatform.swf.sandbox</groupId>
-  <artifactId>maven-sandbox-project</artifactId>
+  <artifactId>maven-sandbox-project-test</artifactId>
   <version>3.0.x-SNAPSHOT</version>
   
   <packaging>pom</packaging>
